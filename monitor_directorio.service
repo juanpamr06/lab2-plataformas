@@ -1,0 +1,13 @@
+[Unit]
+Description=Servicio de Monitoreo de Cambios en el Directorio
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/juanpamr/ejercicio3.sh
+WorkingDirectory=/home/juanpamr
+StandardOutput=append:/home/juanpamr/salida_servicio.log
+StandardError=append:/home/juanpamr/error_servicio.log
+
+[Install]
+WantedBy=multi-user.target
